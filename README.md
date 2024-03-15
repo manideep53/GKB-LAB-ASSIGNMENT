@@ -23,7 +23,7 @@ Launch Eclipse IDE on your system.
 
 ## ADDING APACHE TOMCAT SERVER 9.0
 
-If Apache Tomcat Server is not configured, follow these steps:
+If the Apache Tomcat Server is not configured, follow these steps:
 
 1. Go to **Window > Preferences > Server > Runtime Environments**.
 2. Click "Add" and select "Apache Tomcat" from the list.
@@ -34,7 +34,7 @@ If Apache Tomcat Server is not configured, follow these steps:
 
 1. Download MySQL Connector/JAR from the MySQL official website.
 2. Copy the downloaded JAR file into the **WEB-INF/lib** directory of your project.
-3. Right-click on your project in Eclipse, select **Build Path > Configure Build Path**.
+3. Right-click on your project in Eclipse, and select **Build Path > Configure Build Path**.
 4. In the Libraries tab, click "Add JARs" and select the MySQL Connector/JAR file.
 5. Click "Apply and Close" to save the changes.
 
@@ -42,9 +42,30 @@ If Apache Tomcat Server is not configured, follow these steps:
 
 1. Download the JSTL JAR files from the JSTL official website.
 2. Copy the JSTL JAR files into the **WEB-INF/lib** directory of your project.
-3. Right-click on your project in Eclipse, select **Build Path > Configure Build Path**.
+3. Right-click on your project in Eclipse, and select **Build Path > Configure Build Path**.
 4. In the Libraries tab, click "Add JARs" and select the JSTL JAR files.
 5. Click "Apply and Close" to save the changes.
+
+
+##SETTING UP THE DATABASE:\
+
+To ensure your dynamic web project functions properly, you need to set up the database. Follow these steps:
+
+Create Database in MySQL:
+CREATE DATABASE gkbLab;
+
+Create Table:
+CREATE TABLE User (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(255),
+    Email VARCHAR(255),
+    Age INT,
+    DateOfBirth DATE
+);
+
+Update Database Connection Details:
+
+In  the project, we have a class named DbConnection under the com.dbConnection package. In this class, make sure to update the database connection details including the database name, username, and password. Replace "your_username" and "your_password" with your MySQL username and password respectively. Also, ensure that the JDBC driver for MySQL is included in your project's dependencies.
 
 ## RUNNING THE PROJECT
 
